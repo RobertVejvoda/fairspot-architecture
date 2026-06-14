@@ -21,9 +21,9 @@ Until a target view is explicitly marked authoritative, the text architecture pa
 | Data architecture | Shows target data architecture shape. | [Data Architecture image](/images/fps-data-architecture.png) | Source evidence; replace with DataHub/read-model ownership view. |
 | Logical architecture | Shows logical runtime/deployment shape. | [Logical Architecture image](/images/fps-logical-architecture.png) | Source evidence; replace with runtime deployment and trust-boundary views. |
 | Provider examples | Show older Azure/AWS variants. | [Azure Application Architecture](/images/fps-application-arch-azure.png), [Azure Logical Architecture](/images/fps-logical-architecture-azure.png), [AWS Logical Architecture](/images/fps-logical-architecture-aws.png) | Keep as environment examples only; not core target architecture unless a decision records provider selection. |
-| Software architecture and packages | Shows software packages and service boundaries. | [Software Architecture](https://robertvejvoda.github.io/fairspot/#/technology-layer/software-architecture), package and service images under `docs/images/` | Source evidence; service catalog and target diagrams are authoritative after refresh. |
+| Software architecture and packages | Shows software packages and service boundaries. | [Software Architecture](https://robertvejvoda.github.io/fairspot/#/technology-layer/software-architecture), package and service images under `images/` | Source evidence; service catalog and target diagrams are authoritative after refresh. |
 | BPMN process evidence | Shows older process flows. | [Draw BPMN](/process/draw.bpmn), [Subscribe Tenant BPMN](/process/subscribe-tenant.bpmn), [Generate Invoice BPMN](/process/generate-invoice.bpmn) | Draw can inform target process/workflow views; Billing invoice process is deferred. |
-| Model files | Contain editable model sources. | `docs/archi/fps.archimate`, `docs/fps.drawio`, `docs/fps-composition.drawio`, `docs/wireframes.drawio` | Source model files; update only when Robert refreshes or approves the target model. |
+| Model files | Contain editable model sources. | `archi/fps.archimate`, `fps.drawio`, `fps-composition.drawio`, `wireframes.drawio` | Source model files; update only when Robert refreshes or approves the target model. |
 
 ## Target View Catalog
 

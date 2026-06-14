@@ -2,7 +2,7 @@
 
 This section is the new lightweight TOGAF 10-inspired architecture repository for FairSpot.
 
-It is intentionally separate from the older layer-based documentation. Existing pages under `business-layer/`, `application-layer/`, `technology-layer/`, `security/`, `production/`, and the delivery trackers remain source evidence until their content is migrated or superseded. New architecture governance and target-state content should be added under `docs/architecture/`.
+It is intentionally separate from the older layer-based documentation. Existing pages under `business-layer/`, `application-layer/`, `technology-layer/`, `security/`, `production/`, and the delivery trackers remain source evidence until their content is migrated or superseded. New architecture governance and target-state content should be added under `architecture/`.
 
 FairSpot primarily models target architecture. The baseline is current-state evidence: implemented product behavior, current documentation, deployment assumptions, and known gaps. Baseline evidence exists to support gap analysis; it is not treated as a complete enterprise baseline architecture.
 
@@ -36,7 +36,7 @@ FairSpot primarily models target architecture. The baseline is current-state evi
 
 ## Rules
 
-- Keep new architecture content under `docs/architecture/`.
+- Keep new architecture content under `architecture/`.
 - Treat older layer pages as source evidence, not as the target architecture repository structure.
 - Treat [Legacy Architecture Evidence](https://robertvejvoda.github.io/fairspot/#/architecture-views) as a bridge to old view hierarchy evidence, not as a current architecture entry point.
 - Use Docsify absolute links (`/path/to/page`) inside nested pages so local and hosted routes behave the same.

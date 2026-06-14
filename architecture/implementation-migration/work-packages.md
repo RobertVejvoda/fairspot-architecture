@@ -6,7 +6,7 @@ Work packages group implementation and documentation work that closes architectu
 
 | Work Package | Objective | Closes / Supports | Expected Evidence | Status |
 | --- | --- | --- | --- | --- |
-| WP-001 Architecture Repository Alignment | Bring FairSpot `docs/architecture/` into structural alignment with the TOGAF template. | GAP-005, [issue #383](https://github.com/RobertVejvoda/fairspot/issues/383) | New pages, sidebar, artifact register, link validation. | In progress |
+| WP-001 Architecture Repository Alignment | Bring FairSpot `architecture/` into structural alignment with the TOGAF template. | GAP-005, [issue #383](https://github.com/RobertVejvoda/fairspot/issues/383) | New pages, sidebar, artifact register, link validation. | In progress |
 | WP-002 Customer-Ready Hosted Pilot | Prove durable state, DataHub inbox/projections, hosted profile, WAF/auth, and observability evidence. | GAP-001, GAP-002, GAP-003, GAP-008 | Persistence tests, DataHub projection health, hosted smoke runbook, Dapr hardening evidence. | Planned |
 | WP-003 Role-Centered UX | Validate role-specific default workspaces and customer-visible operational flows. | GAP-004 | Draw schedule/status, HR operations, My Spots detail, admin readiness views. | Planned |
 | WP-004 Contract Evidence Consolidation | Make generated/source-of-truth API and event contracts discoverable from architecture. | GAP-007, [issue #377](https://github.com/RobertVejvoda/fairspot/issues/377) | API contract links, event ownership table, generated client evidence. | Planned |

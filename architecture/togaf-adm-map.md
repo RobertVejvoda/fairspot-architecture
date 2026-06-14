@@ -34,7 +34,7 @@ An artifact can move from `Draft` to `Approved` or `Baselined` when:
 
 FairSpot is a greenfield product, not a classic enterprise estate transformation. The target architecture is the main model. Baseline architecture is represented by current-state evidence and implemented-state snapshots rather than a full baseline architecture document.
 
-Legacy layer pages remain source evidence until their content is migrated or superseded by pages under `docs/architecture/`.
+Legacy layer pages remain source evidence until their content is migrated or superseded by pages under `architecture/`.
 
 ## Enterprise Continuum Placement
 

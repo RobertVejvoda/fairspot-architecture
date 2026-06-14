@@ -6,12 +6,12 @@ This guide is for anyone who wants to understand how this documentation site wor
 
 ## How the Site Works
 
-This is a [Docsify](https://docsify.js.org/) documentation site. Docsify renders Markdown files directly in the browser — there is no build step. The site is hosted on GitHub Pages from the `docs/` folder of this repository.
+This is a [Docsify](https://docsify.js.org/) documentation site. Docsify renders Markdown files directly in the browser — there is no build step. The site is hosted on GitHub Pages from the repository root.
 
 - **Live site:** https://robertvejvoda.github.io/fairspot-architecture/
-- **Source files:** `docs/` folder in this repository
-- **Entry point:** `docs/index.html` (Docsify config) + `docs/Home.md` (home page content) + `docs/README.md` (applied template version)
-- **Sidebar:** `docs/_sidebar.md` — defines all navigation links
+- **Source files:** the repository root
+- **Entry point:** `index.html` (Docsify config) + `Home.md` (home page content) + `README.md` (applied template version)
+- **Sidebar:** `_sidebar.md` — defines all navigation links
 
 Changes committed to the `main` branch are automatically published to GitHub Pages within a few minutes.
 
@@ -20,7 +20,7 @@ Changes committed to the `main` branch are automatically published to GitHub Pag
 ## Folder Structure
 
 ```
-docs/
+.
 ├── index.html                      # Docsify configuration (rarely edited)
 ├── README.md                       # Applied template version
 ├── Home.md                         # Home page shown by Docsify
@@ -57,9 +57,9 @@ docs/
 
 > **This is the most common source of broken links. Read carefully.**
 
-Docsify resolves all Markdown links relative to the **docs root**, not relative to the file that contains the link.
+Docsify resolves all Markdown links relative to the **site root**, not relative to the file that contains the link.
 
-### ✅ Correct — absolute from docs root
+### ✅ Correct — absolute from site root
 
 ```markdown
 [Business Architecture](/architecture/business/README)
@@ -75,7 +75,7 @@ Docsify resolves all Markdown links relative to the **docs root**, not relative 
 
 ### Rule for sidebar links (`_sidebar.md`)
 
-Never use `./` prefix in sidebar links. Write paths directly from the docs root:
+Never use `./` prefix in sidebar links. Write paths directly from the site root:
 
 ```markdown
 * [Architecture Repository](/architecture/README)   ✅
@@ -86,15 +86,15 @@ Never use `./` prefix in sidebar links. Write paths directly from the docs root:
 
 ## How to Add a New Page
 
-1. Create a new `.md` file in the appropriate `docs/architecture/` subfolder.
+1. Create a new `.md` file in the appropriate `architecture/` subfolder.
 2. Write the content in Markdown.
-3. Add a link to `docs/_sidebar.md` using the absolute path from the docs root.
-4. If the page links to other pages, use absolute paths from the docs root (see rule above).
-5. Commit to `master`. The change appears on the live site within a few minutes.
+3. Add a link to `_sidebar.md` using the absolute path from the site root.
+4. If the page links to other pages, use absolute paths from the site root (see rule above).
+5. Commit to `main`. The change appears on the live site within a few minutes.
 
 **Example:** Adding a new "Integration Patterns" page under Information Systems:
 
-1. Create `docs/architecture/information-systems/integration-patterns.md`
+1. Create `architecture/information-systems/integration-patterns.md`
 2. Add to `_sidebar.md`:
    ```markdown
    * [Integration Patterns](/architecture/information-systems/integration-patterns)
@@ -110,7 +110,7 @@ Never use `./` prefix in sidebar links. Write paths directly from the docs root:
 
 The easiest way to edit content is directly in the GitHub web editor:
 
-1. Navigate to the file in the repository (e.g., `docs/architecture/business/README.md`)
+1. Navigate to the file in the repository (e.g., `architecture/business/README.md`)
 2. Click the **pencil icon** (Edit this file) in the top-right of the file view
 3. Make your changes
 4. Click **"Commit changes..."** (top right)
@@ -129,8 +129,8 @@ If you want to preview the site before pushing to GitHub:
 # Install Docsify CLI (one-time)
 npm install -g docsify-cli
 
-# Serve the docs folder
-npx docsify-cli serve docs
+# Serve the repository root
+npx docsify-cli serve .
 
 # Open in browser
 # http://localhost:3000
@@ -142,7 +142,7 @@ npx docsify-cli serve docs
 
 | Problem | Likely cause | Fix |
 |---|---|---|
-| Link gives 404 | Path is relative to file, not docs root | Prefix the path with `architecture/` (or the correct root-relative path) |
+| Link gives 404 | Path is relative to file, not site root | Prefix the path with `architecture/` (or the correct root-relative path) |
 | Sidebar link 404 | `./` prefix in `_sidebar.md` | Remove the `./` prefix |
 | Changes not visible | GitHub Pages CDN cache | Wait 2–5 minutes and hard-refresh (`Cmd+Shift+R` / `Ctrl+Shift+R`) |
 | New page not in nav | Missing entry in `_sidebar.md` | Add the link to `_sidebar.md` |
@@ -154,9 +154,9 @@ npx docsify-cli serve docs
 
 | File | Purpose |
 |---|---|
-| `docs/index.html` | Docsify configuration (theme, plugins, settings) |
-| `docs/README.md` | Home page — shown when visiting the site root |
-| `docs/_sidebar.md` | Navigation sidebar — all section and page links |
-| `docs/contributing.md` | This guide — how to contribute and maintain the site |
-| `docs/architecture/README.md` | Architecture repository index and version history |
-| `docs/architecture/artifact-register.md` | Complete list of all architecture artifacts and their status |
+| `index.html` | Docsify configuration (theme, plugins, settings) |
+| `README.md` | Applied template version and repository notes |
+| `_sidebar.md` | Navigation sidebar — all section and page links |
+| `contributing.md` | This guide — how to contribute and maintain the site |
+| `architecture/README.md` | Architecture repository index and version history |
+| `architecture/artifact-register.md` | Complete list of all architecture artifacts and their status |

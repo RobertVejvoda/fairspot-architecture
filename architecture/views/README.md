@@ -2,7 +2,7 @@
 
 Architecture views and diagrams answer stakeholder concerns across the FairSpot target architecture.
 
-The existing diagram exports under `docs/images/`, `docs/archi/`, and draw.io files remain source evidence until the target view catalog marks a replacement view as authoritative. Source-evidence diagrams can explain history and earlier design intent, but they should not override the current target architecture pages when there is a conflict.
+The existing diagram exports under `images/`, `archi/`, and draw.io files remain source evidence until the target view catalog marks a replacement view as authoritative. Source-evidence diagrams can explain history and earlier design intent, but they should not override the current target architecture pages when there is a conflict.
 
 ## Contents
 

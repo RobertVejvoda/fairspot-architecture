@@ -32,7 +32,7 @@
 ## Routing Rules
 
 - Routine implementation goes through issues and PRs.
-- Architecture-significant changes update the relevant `docs/architecture/` artifact in the same PR or a linked docs PR.
+- Architecture-significant changes update the relevant `architecture/` artifact in the same PR or a linked docs PR.
 - Labels do not own workflow state; Project fields `Status`, `Owner`, and `Implementer` are the durable workflow signals.
 - A merged PR closes the implementation loop only when validation evidence is recorded and linked issues are moved to `Done`.
 
