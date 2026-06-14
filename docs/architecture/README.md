@@ -10,6 +10,8 @@ FairSpot primarily models target architecture. The baseline is current-state evi
 
 | Area | New Architecture Repository Page |
 | --- | --- |
+| Plain-language usage guide | [FairSpot Architecture In Plain Words](/architecture/plain-language-introduction) |
+| Repository structure changes | [Repository Changes](/architecture/repository-changes) |
 | TOGAF ADM map | [TOGAF ADM Map](/architecture/togaf-adm-map) |
 | Lightweight ADM execution checklist | [ADM Checklist](/architecture/adm-checklist) |
 | Artifact status and page versions | [Artifact Register](/architecture/artifact-register) |
@@ -27,6 +29,7 @@ FairSpot primarily models target architecture. The baseline is current-state evi
 | Governance | [Governance](/architecture/governance/) |
 | Implementation and migration | [Implementation And Migration](/architecture/implementation-migration/) |
 | Views and diagrams | [Views and Diagrams](/architecture/views/) |
+| Candidate solution options | [Candidate Architectures](/architecture/architecture-states/candidate-architectures) |
 | Baseline, target, transition, and gap tracking | [Architecture States](/architecture/architecture-states/) |
 | Durable decisions | [Versions and Decisions](https://robertvejvoda.github.io/fairspot/#/versions-and-decisions) |
 | Legacy/source evidence | [Legacy Architecture Evidence](https://robertvejvoda.github.io/fairspot/#/architecture-views) |
@@ -41,3 +44,5 @@ FairSpot primarily models target architecture. The baseline is current-state evi
 - Mark assumptions and current-state evidence clearly when a complete baseline does not exist.
 - Keep missing layers visible as placeholders instead of leaving readers to infer gaps from legacy documentation.
 - Use [Enterprise Continuum](/architecture/enterprise-continuum/) to distinguish FairSpot product architecture from the fictive FairSpot Operator enterprise architecture.
+- Record architecture-significant ideas as [Candidate Architectures](/architecture/architecture-states/candidate-architectures) before promoting them to target or transition architecture.
+- Use [Architecture Change Set](/architecture/governance/architecture-change-set) when a material solution change affects multiple artifacts.

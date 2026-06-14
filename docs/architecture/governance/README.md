@@ -20,6 +20,7 @@ For FairSpot, governance is intentionally lightweight. It should make architectu
 | Area | Rule | Source Of Truth |
 | --- | --- | --- |
 | Architecture ownership | Robert is accountable for architecture direction. Codex maintains architecture docs and prepares reviewable recommendations. | This repository, [RACI](/architecture/governance/raci) |
+| Active governance questions | Architecture-significant open questions are tracked until routed. | [Architecture Governance Log](/architecture/governance/architecture-governance-log) |
 | Durable decisions | Durable architecture decisions are recorded in [Versions and Decisions](https://robertvejvoda.github.io/fairspot/#/versions-and-decisions). | Decision log |
 | Architecture artifacts | Governed artifacts declare status, version, owner, accountable owner, and review trigger. | [Artifact Register](/architecture/artifact-register) |
 | Delivery work | Implementation work is tracked through GitHub issues and the FPS Delivery Kanban. | [Delivery Board](https://robertvejvoda.github.io/fairspot/#/delivery-board) |
@@ -36,8 +37,11 @@ Preliminary contains the architecture method and governance rules, not product b
 | Architecture board | [Architecture Board](/architecture/governance/architecture-board) | Partial |
 | RACI | [RACI](/architecture/governance/raci) | Partial |
 | Artifact lifecycle | [Artifact Lifecycle](/architecture/governance/artifact-lifecycle) | Partial |
+| Architecture governance log | [Architecture Governance Log](/architecture/governance/architecture-governance-log) | Draft |
 | Architecture review gates | [Architecture Review](/architecture/governance/architecture-review) | Partial |
 | Architecture contract | [Architecture Contract](/architecture/governance/architecture-contract) | Draft |
+| Delivery operating model | [Delivery Operating Model](/architecture/governance/delivery-operating-model) | Draft |
+| Architecture change sets | [Architecture Change Set](/architecture/governance/architecture-change-set) | Draft |
 | Change control | [Change Control](/architecture/governance/change-control) | Partial |
 | Waivers | [Waivers](/architecture/governance/waivers) | Draft |
 | Source-evidence migration rules | [Architecture Migration Tracker](/architecture/migration-tracker) | Partial |
@@ -45,10 +49,13 @@ Preliminary contains the architecture method and governance rules, not product b
 ## Contents
 
 - [Architecture Board](/architecture/governance/architecture-board)
+- [Architecture Governance Log](/architecture/governance/architecture-governance-log)
 - [RACI](/architecture/governance/raci)
 - [Artifact Lifecycle](/architecture/governance/artifact-lifecycle)
 - [Architecture Review](/architecture/governance/architecture-review)
 - [Architecture Contract](/architecture/governance/architecture-contract)
+- [Delivery Operating Model](/architecture/governance/delivery-operating-model)
+- [Architecture Change Set](/architecture/governance/architecture-change-set)
 - [Change Control](/architecture/governance/change-control)
 - [Waivers](/architecture/governance/waivers)
 

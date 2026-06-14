@@ -20,6 +20,8 @@ FairSpot is currently in the **Customer-Ready Pilot** transition: the product st
 - [Roadmap](/architecture/implementation-migration/roadmap)
 - [Transition Architectures](/architecture/implementation-migration/transition-architectures)
 - [Work Packages](/architecture/implementation-migration/work-packages)
+- [Delivery Sourcing Options](/architecture/implementation-migration/delivery-sourcing-options)
+- [Architecture Increment Checklist](/architecture/implementation-migration/vertical-slice-checklist)
 - [Readiness](/architecture/implementation-migration/readiness)
 
 ## Related Views
@@ -38,6 +40,7 @@ FairSpot is currently in the **Customer-Ready Pilot** transition: the product st
 | Customer-ready first | Work is sequenced around deployable customer evaluation, not broad enterprise completeness. |
 | Evidence over assertion | Gaps close only when linked to implementation, runbook, contract, or review evidence. |
 | Keep Billing deferred | Billing remains visible but outside customer-first deployability. |
+| Slice by outcome | Architecture increments should own a useful business, data, platform, security, or operations outcome from trigger to evidence. |
 
 ## Requirement Coverage
 

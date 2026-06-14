@@ -9,6 +9,7 @@ FairSpot uses lightweight current-state evidence as its baseline. The target arc
 | State Type | Meaning | FairSpot Use |
 | --- | --- | --- |
 | Baseline | A named snapshot of current architecture or current-state evidence. | Implemented product state, current docs, current deployment assumptions, and known gaps. |
+| Candidate | A possible architecture option not yet accepted. | Hosted profile alternatives, DataHub/RDS naming, mobile packaging, delivery sourcing options. |
 | Target | A named future architecture accepted or under review. | Customer-ready FairSpot architecture for hosted pilot and client evaluation. |
 | Transition | An intermediate architecture state between baseline and target. | Milestone or slice groups that move FairSpot toward deployability. |
 | Gap Analysis | Structured comparison between baseline and target. | Customer-first readiness gaps and architecture implementation gaps. |
@@ -25,6 +26,7 @@ FairSpot uses lightweight current-state evidence as its baseline. The target arc
 ## Contents
 
 - [Baseline Architecture](/architecture/architecture-states/baseline-architecture)
+- [Candidate Architectures](/architecture/architecture-states/candidate-architectures)
 - [Target Architecture](/architecture/architecture-states/target-architecture)
 - [Transition Architectures](/architecture/architecture-states/transition-architectures)
 - [Architecture Version Register](/architecture/architecture-states/architecture-version-register)

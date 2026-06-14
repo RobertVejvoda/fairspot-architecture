@@ -6,6 +6,7 @@ It is intended for enterprise architecture, solution architecture, security revi
 
 ## Start Here
 
+- [FairSpot Architecture In Plain Words](./architecture/plain-language-introduction)
 - [TOGAF ADM Map](./architecture/togaf-adm-map)
 - [ADM Checklist](./architecture/adm-checklist)
 - [Architecture Vision](./architecture/architecture-vision)
