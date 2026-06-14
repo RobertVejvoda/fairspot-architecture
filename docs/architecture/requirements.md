@@ -33,6 +33,19 @@ Do not duplicate full implementation detail in architecture pages. Instead:
 - Link delivery issues from the requirement when implementation work starts.
 - Reference `AR-###`, `GAP-###`, `RISK-###`, `CON-###`, or `ADR-###` IDs from issue bodies and PR descriptions.
 - Update requirement status when implementation evidence changes the architecture state.
+- Do not create GitHub issues automatically when a requirement becomes `Accepted`; create issues only when the requirement is actionable and sliced.
+
+Use a delivery reference state so architecture and backlog stay aligned without duplication:
+
+| Delivery Ref State | Meaning |
+| --- | --- |
+| `Not sliced` | Requirement is accepted or being shaped, but no implementation slice exists yet. |
+| `Ready to slice` | Requirement is ready for Codex or an architect to derive one or more GitHub issues. |
+| `#123` | Delivery issue or PR exists and should contain the concrete scope, acceptance criteria, and validation. |
+| `Deferred` | Requirement is valid but outside the current architecture version, milestone, or release. |
+| `No implementation needed` | Requirement is satisfied by governance, documentation, review practice, or an existing control rather than code. |
+
+One requirement may produce multiple issues, and one issue may satisfy multiple requirements. Keep the architecture requirement stable and link the delivery evidence instead of cloning the same text into every issue.
 
 ### Simple Example
 
@@ -41,7 +54,8 @@ Do not duplicate full implementation detail in architecture pages. Instead:
 | Stakeholder concern | HR needs to explain why an employee did or did not receive parking. |
 | Architecture requirement | `AR-004` Employees must see safe, understandable booking and allocation information without hidden lottery internals. |
 | Affected views | Business Architecture, Application Architecture, Security/Privacy, DataHub/read models. |
-| Delivery issue | `UX: Employee draw outcome history with reason labels`, referencing `AR-004`. |
+| Delivery readiness | `Ready to slice` once scope and affected views are clear. |
+| Delivery issue | `UX: Employee draw outcome history with reason labels`, referencing `AR-004`, created only when implementation is ready to plan. |
 | Pull request evidence | PR implements the endpoint/UI, includes tests, screenshots or visual notes, and links the issue. |
 | Architecture update | `AR-004` moves from `Draft` or `In progress` to `Partially implemented` or `Implemented`, with issue/PR evidence. |
 
