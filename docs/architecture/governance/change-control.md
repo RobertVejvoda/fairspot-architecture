@@ -13,11 +13,21 @@
 
 | Source | Handling |
 | --- | --- |
-| Chat requirement | Convert to issue body, issue comment, or source-of-truth doc before routing implementation. |
-| GitHub issue | Treat as delivery source of truth when it has scope, acceptance criteria, validation, owner, and implementer where relevant. |
+| Chat requirement | If architecture-significant, record it first as a requirement, constraint, decision, risk, target-state note, or gap before routing implementation. |
+| Architecture requirement | Treat as durable intent. Use it to derive one or more delivery issues. |
+| GitHub issue | Treat as delivery source of truth when it has architecture references, scope, acceptance criteria, validation, owner, and implementer where relevant. |
 | Pull request | Review against linked issue, affected architecture artifacts, validation evidence, and known gaps. |
 | Architecture decision | Record durable changes in [Versions and Decisions](https://robertvejvoda.github.io/fairspot/#/versions-and-decisions). |
 | Customer or security finding | Record the finding, affected artifact, risk owner, and whether it is a blocker, gap, waiver, or follow-up slice. |
+
+## Traceability Rules
+
+- Architecture pages define durable intent and governance state.
+- GitHub issues implement that intent in smaller, testable slices.
+- PRs provide implementation and validation evidence.
+- Every architecture-significant issue should include an `Architecture refs` section with relevant `AR-###`, `GAP-###`, `RISK-###`, `CON-###`, or `ADR-###` IDs.
+- Every merged architecture-significant PR should leave enough evidence for the linked architecture requirement or gap to be updated.
+- Avoid copying full issue acceptance criteria back into architecture pages. Link the issue instead.
 
 ## Routing Rules
 

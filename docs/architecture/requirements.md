@@ -15,6 +15,60 @@ Requirements Management is continuous across the ADM. Requirements are not owned
 
 When a phase introduces or changes an architecture-significant requirement, update this page or the linked traceability evidence, then reflect the impact in the affected phase artifact.
 
+## Architecture-First Requirement Rule
+
+Architecture-significant requirements start here before they become implementation issues. GitHub issues are the delivery backlog; they are not the durable architecture source of truth.
+
+Use this split:
+
+| Place | Purpose | Level of Detail |
+| --- | --- | --- |
+| Architecture Repository | Durable intent: stakeholder need, requirement, constraint, decision, risk, target state, or gap. | Stable enough to govern multiple implementation slices. |
+| GitHub issue | Delivery execution: what to build now, acceptance criteria, validation, owner, and implementer. | Specific, testable, and scoped to one implementation slice. |
+| Pull request | Evidence: what changed, what passed, what requirement or issue it satisfies. | Concrete implementation and validation evidence. |
+
+Do not duplicate full implementation detail in architecture pages. Instead:
+
+- Give every architecture-significant requirement a stable `AR-###` ID.
+- Link delivery issues from the requirement when implementation work starts.
+- Reference `AR-###`, `GAP-###`, `RISK-###`, `CON-###`, or `ADR-###` IDs from issue bodies and PR descriptions.
+- Update requirement status when implementation evidence changes the architecture state.
+
+### Simple Example
+
+| Step | Example |
+| --- | --- |
+| Stakeholder concern | HR needs to explain why an employee did or did not receive parking. |
+| Architecture requirement | `AR-004` Employees must see safe, understandable booking and allocation information without hidden lottery internals. |
+| Affected views | Business Architecture, Application Architecture, Security/Privacy, DataHub/read models. |
+| Delivery issue | `UX: Employee draw outcome history with reason labels`, referencing `AR-004`. |
+| Pull request evidence | PR implements the endpoint/UI, includes tests, screenshots or visual notes, and links the issue. |
+| Architecture update | `AR-004` moves from `Draft` or `In progress` to `Partially implemented` or `Implemented`, with issue/PR evidence. |
+
+## Versioning and Status
+
+Versioning has three levels:
+
+| Level | What Changes | Version Rule |
+| --- | --- | --- |
+| Requirement ID | The intent is stable but wording, status, affected views, or evidence changes. | Keep the same `AR-###`; update status/evidence/review date. |
+| Artifact version | A governed page changes materially, such as requirements, decisions, target architecture, risk, or standards. | Bump the page metadata version and record meaningful changes in the page or Artifact Register where useful. |
+| Architecture version | A coherent target/baseline/transition package changes enough to affect review or governance. | Add or update a named version in [Architecture Version Register](/architecture/architecture-states/architecture-version-register). |
+
+Do not create a new requirement ID for every implementation slice. Create a new `AR-###` only when the requirement has a different durable intent. If an issue only delivers part of a requirement, link it as evidence and keep the requirement status as `Partial` or `In progress`.
+
+Recommended requirement statuses:
+
+| Status | Meaning |
+| --- | --- |
+| Draft | Captured but not yet reviewed for scope and wording. |
+| Accepted | Approved as architecture intent. |
+| In progress | Delivery work is active. |
+| Partial | Some evidence exists, but the requirement is not fully satisfied. |
+| Implemented | Evidence satisfies the requirement for the stated architecture version. |
+| Superseded | Replaced by another requirement or decision. |
+| Deferred | Valid requirement, intentionally outside the current architecture version or release. |
+
 | ID | Requirement | Source | Affected Views | Status |
 | --- | --- | --- | --- | --- |
 | AR-001 | FairSpot must preserve tenant isolation across API, persistence, events, audit, and read models. | Security and customer integration decisions | Security, data, application | Draft |
