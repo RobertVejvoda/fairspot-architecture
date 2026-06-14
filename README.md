@@ -53,3 +53,7 @@ This page tracks the architecture-repository-template structure that has been ap
 - Use architecture change sets when a material change affects several artifacts.
 - FairSpot/Parking diagram content is project content here, not sample-domain material.
 - Keep template guidance only where it helps FairSpot architecture governance; replace generic guidance with FairSpot-specific rules over time.
+
+## License
+
+This architecture repository follows the FairSpot project license: GNU Affero General Public License v3.0. See [LICENSE](/LICENSE).
