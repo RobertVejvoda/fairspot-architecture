@@ -73,3 +73,35 @@ This table separates customer-first capabilities from source-evidence ideas that
 - Operational insight should be reframed around DataHub/read models, not the obsolete Reporting PostgreSQL direction.
 - Billing remains deferred and should not appear as a required customer-first capability.
 - Robert TODO: confirm whether pilot feedback is P2 for customer demos or should remain deferred.
+
+## Related Views
+
+| View | Use When | Example |
+| --- | --- | --- |
+| Business Capability View | A reader needs to see in-scope capabilities, priorities, grouping, or maturity. | [Capability Map](#example-capability-map) |
+
+## Example Capability Map
+
+```plantuml
+@startuml
+!include <archimate/Archimate>
+LAYOUT_TOP_DOWN()
+
+Strategy_Capability(fairspot, "FairSpot Parking Management")
+Strategy_Capability(request, "Parking Request Management")
+Strategy_Capability(eligibility, "Eligibility And Access Scope")
+Strategy_Capability(allocation, "Fair Allocation / Lottery")
+Strategy_Capability(cancellation, "Cancellation And Reallocation")
+Strategy_Capability(notifications, "Notifications")
+Strategy_Capability(reporting, "Operational Reporting")
+Strategy_Capability(admin, "Administration And Audit")
+
+Rel_Composition(fairspot, request)
+Rel_Composition(fairspot, eligibility)
+Rel_Composition(fairspot, allocation)
+Rel_Composition(fairspot, cancellation)
+Rel_Composition(fairspot, notifications)
+Rel_Composition(fairspot, reporting)
+Rel_Composition(fairspot, admin)
+@enduml
+```

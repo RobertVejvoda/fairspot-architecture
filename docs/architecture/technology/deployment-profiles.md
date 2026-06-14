@@ -60,3 +60,36 @@ Client production is bring-your-own-cloud/platform. FairSpot should provide:
 - [Hosting Strategy](https://robertvejvoda.github.io/fairspot/#/production/hosting-deployment-strategy)
 - [Customer-First Deployment Gap Analysis](https://robertvejvoda.github.io/fairspot/#/production/customer-first-deployment-gap-analysis)
 - [NAS Cloudflare Deployment Profile](https://robertvejvoda.github.io/fairspot/#/production/nas-cloudflare-deployment-profile)
+
+## Related Views
+
+| View | Use When | Example |
+| --- | --- | --- |
+| Deployment View | A reader needs to see runtime nodes, ingress, networks, stores, and platform components. | [Deployment Diagram](#example-deployment-diagram) |
+| Security And Privacy View | A reader needs to see trust boundaries, ingress controls, or sensitive data zones. | [Security And Privacy Diagram](/architecture/security/security-architecture?id=example-security-and-privacy-diagram) |
+
+## Example Deployment Diagram
+
+```plantuml
+@startuml
+!include <archimate/Archimate>
+LAYOUT_LEFT_RIGHT()
+
+Technology_Device(device, "User Device")
+Technology_Service(ingress, "Protected Ingress / WAF")
+Technology_Node(runtime, "Cloud Runtime")
+Technology_Artifact(api, "FairSpot API Artifact")
+Technology_Artifact(worker, "Allocation Worker Artifact")
+Technology_Node(database, "Database Node")
+Technology_SystemSoftware(broker, "Event Broker")
+Technology_Service(observability, "Observability Service")
+
+Rel_Flow(device, ingress, "HTTPS")
+Rel_Serving(ingress, runtime, "routes")
+Rel_Assignment(runtime, api, "hosts")
+Rel_Assignment(runtime, worker, "hosts")
+Rel_Flow(api, database, "reads/writes")
+Rel_Flow(worker, broker, "publishes/subscribes")
+Rel_Serving(observability, runtime, "monitors")
+@enduml
+```

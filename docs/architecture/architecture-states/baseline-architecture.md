@@ -18,3 +18,44 @@ FairSpot does not yet maintain a full enterprise baseline architecture. The base
 - Some implementation tracker entries are historical and may need review before customer-facing claims.
 - Billing is intentionally deferred and should not be treated as part of the customer-ready target.
 - Legacy layer pages are evidence sources, not the new target architecture folder structure.
+
+## Related Views
+
+| View | Use When | Example |
+| --- | --- | --- |
+| Baseline Architecture View | A reader needs a high-level current-state picture before comparing target, transition, or gap content. | [Baseline Architecture Overview](#example-baseline-architecture-overview) |
+| Gap Closure View | A reader needs to see which baseline-to-target gaps must be closed. | [Gap Closure Map](/architecture/architecture-states/gap-analysis?id=example-gap-closure-map) |
+
+## Example Baseline Architecture Overview
+
+```plantuml
+@startuml
+!include <archimate/Archimate>
+LAYOUT_TOP_DOWN()
+
+Business_Actor(employee, "Employee")
+Business_Process(manualRequest, "Parking Request Handling")
+Application_Component(app, "Mobile / Web App")
+Application_Component(booking, "Booking Component")
+Application_DataObject(transientState, "Transient / Partially Proven State")
+Application_Component(reporting, "Manual Reporting")
+Technology_Node(runtime, "Prototype Runtime")
+Technology_Node(localStore, "Local / Unproven Store")
+Motivation_Assessment(gap, "Durability And Restore Evidence Gap")
+
+Rel_Triggering(employee, manualRequest, "requests")
+Rel_Serving(app, manualRequest, "supports")
+Rel_Flow(app, booking, "request")
+Rel_Access_rw(booking, transientState, "reads/writes")
+Rel_Assignment(runtime, booking, "hosts")
+Rel_Assignment(runtime, reporting, "hosts")
+Rel_Flow(booking, localStore, "stores")
+Rel_Association(gap, transientState, "limits confidence")
+
+' Layering hint: business above application above technology.
+employee -[hidden]down- app
+manualRequest -[hidden]down- booking
+booking -[hidden]down- runtime
+transientState -[hidden]down- localStore
+@enduml
+```

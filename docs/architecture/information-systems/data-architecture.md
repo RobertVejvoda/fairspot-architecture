@@ -55,3 +55,63 @@ FairSpot uses service-owned writes with event-fed read models. DataHub is the ta
 - [DataHub](https://robertvejvoda.github.io/fairspot/#/application-layer/datahub)
 - [Security Model](https://robertvejvoda.github.io/fairspot/#/security/security-model)
 - [Tenant Storage Contract](https://robertvejvoda.github.io/fairspot/#/production/tenant-storage-contract)
+
+## Related Views
+
+| View | Use When | Example |
+| --- | --- | --- |
+| Data Flow View | A reader needs to see how data crosses applications, events, APIs, files, or external integrations. | [Data Flow Diagram](#example-data-flow-diagram) |
+| Domain Lifecycle View | A reader needs to see allowed business-object states and lifecycle transitions. | [Domain Lifecycle State Model](#example-domain-lifecycle-state-model) |
+| Security And Privacy View | A reader needs to see personal-data boundaries, controls, or sensitive data risks. | [Security And Privacy Diagram](/architecture/security/security-architecture?id=example-security-and-privacy-diagram) |
+
+## Example Data Flow Diagram
+
+```plantuml
+@startuml
+!include <archimate/Archimate>
+LAYOUT_LEFT_RIGHT()
+
+Application_Component(app, "Mobile / Web App")
+Application_Service(bookingService, "Booking Service")
+Application_DataObject(bookingRequest, "Booking Request")
+Application_Component(eventBus, "Event Bus")
+Application_Service(allocationService, "Allocation Service")
+Application_Component(reporting, "Reporting Read Model")
+Application_Service(notificationService, "Notification Service")
+
+Rel_Flow(app, bookingService, "booking request")
+Rel_Access_w(bookingService, bookingRequest, "creates")
+Rel_Flow(bookingService, eventBus, "BookingSubmitted event")
+Rel_Triggering(eventBus, allocationService, "triggers")
+Rel_Triggering(eventBus, reporting, "triggers")
+Rel_Flow(allocationService, notificationService, "allocation result")
+@enduml
+```
+
+## Example Domain Lifecycle State Model
+
+```plantuml
+@startuml
+hide empty description
+
+[*] --> Submitted : request created
+Submitted --> Pending : eligible for allocation
+Submitted --> Rejected : invalid or out of scope
+Pending --> Allocated : draw allocates
+Pending --> Expired : slot window closes
+Allocated --> Completed : allocation used
+Allocated --> Cancelled : user or admin cancels
+Cancelled --> [*]
+Rejected --> [*]
+Expired --> [*]
+Completed --> [*]
+
+state Submitted
+state Pending
+state Allocated
+state Cancelled
+state Rejected
+state Expired
+state Completed
+@enduml
+```

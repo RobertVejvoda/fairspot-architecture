@@ -57,3 +57,44 @@ These value streams describe the target operating model that should be visible t
 - Facilities resource-map operations diagram is still a placeholder.
 - Sponsor management summary value stream diagram is still a placeholder.
 - Robert TODO: provide or approve the business value stream diagrams after the source content stabilizes.
+
+## Related Views
+
+| View | Use When | Example |
+| --- | --- | --- |
+| Value Stream View | A reader needs to see business value from trigger to outcome without process or implementation detail. | [Value Stream Map](#example-value-stream-map) |
+| Business Capability View | A reader needs to see which capabilities support the value stream. | [Capability Map](/architecture/business/capabilities?id=example-capability-map) |
+
+## Example Value Stream Map
+
+```plantuml
+@startuml
+!include <archimate/Archimate>
+LAYOUT_LEFT_RIGHT()
+
+Business_Actor(employee, "Employee")
+Business_Event(need, "Needs Parking")
+Business_Process(request, "Request Parking")
+Business_Process(allocate, "Fair Allocation")
+Business_Process(useSpace, "Use Parking Allocation")
+Business_Process(exception, "Cancel / Reallocate")
+Business_Object(outcome, "Accepted Parking Outcome")
+Strategy_Capability(requestMgmt, "Parking Request Management")
+Strategy_Capability(allocation, "Fair Allocation / Lottery")
+Strategy_Capability(operations, "Operations And Support")
+
+Rel_Triggering(employee, need, "creates need")
+Rel_Triggering(need, request, "starts")
+Rel_Triggering(request, allocate, "eligible request")
+Rel_Triggering(allocate, useSpace, "allocation")
+Rel_Triggering(useSpace, exception, "if changed")
+Rel_Access_w(useSpace, outcome, "realizes")
+Rel_Association(requestMgmt, request, "supports")
+Rel_Association(allocation, allocate, "supports")
+Rel_Association(operations, exception, "supports")
+@enduml
+```
+
+## Guidance
+
+Use value streams to explain business outcomes. Keep process detail in [Business Processes](/architecture/business/business-processes) and technical flow in the appropriate information systems or technology artifact.

@@ -16,8 +16,8 @@ Top-level pages inside the Architecture Repository should use this header when t
 | **ADM Phase** | Preliminary / A / B / C / D / E / F / G / H / Requirements Management |
 | **Responsible** | Architecture Owner |
 | **Accountable** | Robert / Architecture Board |
-| **Last Reviewed** | YYYY-MM-DD |
-| **Next Review** | YYYY-MM-DD or event-triggered |
+| **Last Reviewed** | 2026-06-14 |
+| **Next Review** | On artifact status, ownership, or review-trigger change |
 
 ## Register
 

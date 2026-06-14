@@ -32,3 +32,43 @@ FairSpot security centers on authenticated context, tenant isolation, least priv
 ## Required Trust Boundary Diagram
 
 Placeholder: a security trust-boundary view should show browser/mobile clients, Cloudflare/Tunnel/WAF, API gateway, Keycloak/OIDC, services, Dapr sidecars, state stores, pub/sub broker, DataHub PostgreSQL, Audit PII mapping, observability backends, secret stores, backup/restore path, and operator-only access path.
+
+## Related Views
+
+| View | Use When | Example |
+| --- | --- | --- |
+| Security And Privacy View | A reader needs to see trust boundaries, personal-data boundaries, controls, and material risks. | [Security And Privacy Diagram](#example-security-and-privacy-diagram) |
+| Deployment View | A reader needs to see runtime, ingress, network, and platform boundaries that affect security. | [Deployment Diagram](/architecture/technology/deployment-profiles?id=example-deployment-diagram) |
+
+## Example Security And Privacy Diagram
+
+```plantuml
+@startuml
+!include <archimate/Archimate>
+LAYOUT_TOP_DOWN()
+
+Technology_Device(user, "User Device")
+Technology_Service(edge, "TLS + WAF + Auth")
+Application_Component(api, "FairSpot API")
+Motivation_Requirement(authz, "Role / Scope Authorization")
+Application_DataObject(scopeData, "Booking / User Scope Data")
+Application_DataObject(audit, "Audit Events")
+Motivation_Constraint(retention, "Retention Policy")
+Motivation_Assessment(risk, "Missing Projection Isolation Evidence")
+
+Rel_Flow(user, edge, "flow")
+Rel_Serving(edge, api, "serves")
+Rel_Association(authz, api, "constrains")
+Rel_Access_rw(api, scopeData, "accesses")
+Rel_Access_w(api, audit, "creates")
+Rel_Association(retention, scopeData, "constrains")
+Rel_Association(risk, scopeData, "risk")
+
+' Layering hint: requirements above application/data above technology.
+authz -[hidden]down- api
+retention -[hidden]down- scopeData
+risk -[hidden]down- audit
+api -[hidden]down- edge
+scopeData -[hidden]down- user
+@enduml
+```

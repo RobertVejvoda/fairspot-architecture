@@ -1,4 +1,6 @@
 * [Architecture Home](./Home)
+* [Applied Template Version](./README)
+* [Contributing](./contributing)
 * [Architecture Repository](./architecture/)
   * [Architecture In Plain Words](./architecture/plain-language-introduction)
   * [Repository Changes](./architecture/repository-changes)

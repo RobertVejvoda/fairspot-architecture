@@ -27,3 +27,34 @@ Release checkpoints validate a concrete branch against the architecture roadmap.
 | Hosted public-domain evidence | NAS/Cloudflare/WAF/auth/no-internal-exposure smoke evidence. | GAP-003 |
 | Role-centered UX validation | Employee, HR/facility, admin, auditor, sponsor, and operator entry points are understandable. | GAP-004 |
 | Contract evidence consolidation | Generated/source-of-truth APIs and event ownership are discoverable. | GAP-007 |
+
+## Related Views
+
+| View | Use When | Example |
+| --- | --- | --- |
+| Roadmap View | A reader needs to see architecture phases, timing assumptions, milestones, and readiness gates. | [Roadmap Gantt Chart](#example-roadmap-gantt-chart) |
+| Transition State View | A reader needs to see how roadmap phases move the architecture between baseline, transition, and target states. | [Transition State Timeline](/architecture/architecture-states/transition-architectures?id=example-transition-state-timeline) |
+
+## Example Roadmap Gantt Chart
+
+```plantuml
+@startgantt
+Project starts 2026-07-01
+saturday are closed
+sunday are closed
+
+[Foundation] lasts 4 weeks
+[Foundation] is colored in LightBlue
+[Foundation review] happens at [Foundation]'s end
+
+[Customer-Ready Pilot] starts at [Foundation]'s end
+[Customer-Ready Pilot] lasts 8 weeks
+[Customer-Ready Pilot] is colored in LightGreen
+[Pilot readiness review] happens at [Customer-Ready Pilot]'s end
+
+[Production Hardening] starts at [Customer-Ready Pilot]'s end
+[Production Hardening] lasts 6 weeks
+[Production Hardening] is colored in LightYellow
+[Production acceptance] happens at [Production Hardening]'s end
+@endgantt
+```

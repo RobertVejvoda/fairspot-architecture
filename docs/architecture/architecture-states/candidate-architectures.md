@@ -65,3 +65,47 @@ Promote a candidate only when it is accepted or explicitly selected for review. 
 2. Use an [Architecture Change Set](/architecture/governance/architecture-change-set) when the selected candidate changes requirements, gaps, target, transition, domain architecture, migration, governance, or diagrams.
 3. Update [Architecture Version Register](/architecture/architecture-states/architecture-version-register) only if the accepted candidate changes a named baseline, target, or transition snapshot.
 4. Leave rejected or superseded candidates here with a short outcome so the reasoning is not lost.
+
+## Related Views
+
+| View | Use When | Example |
+| --- | --- | --- |
+| Candidate Architecture View | A reader needs to understand an unapproved option before assessment or selection. | [Candidate Architecture Sketch](#example-candidate-architecture-sketch) |
+| Target Architecture View | A reader needs to compare a candidate with the accepted target direction. | [Target Architecture Overview](/architecture/architecture-states/target-architecture?id=example-target-architecture-overview) |
+
+## Example Candidate Architecture Sketch
+
+```plantuml
+@startuml
+!include <archimate/Archimate>
+LAYOUT_TOP_DOWN()
+
+Application_Component(app, "Mobile / Web App")
+Application_Component(booking, "Booking Service")
+Application_DataObject(bookingStore, "Booking Store")
+Application_Component(eventBus, "Event Bus")
+Application_Component(allocationWorker, "Allocation Worker")
+Application_Component(readModel, "Reporting Read Model")
+Technology_Node(managedRuntime, "Managed Runtime")
+Technology_Node(managedDatabase, "Managed Database")
+Motivation_Assessment(candidateRisk, "Operational Complexity Tradeoff")
+Motivation_Requirement(req, "Restart-Safe State")
+
+Rel_Flow(app, booking, "commands")
+Rel_Access_rw(booking, bookingStore, "persists")
+Rel_Triggering(booking, eventBus, "publishes")
+Rel_Triggering(eventBus, allocationWorker, "triggers")
+Rel_Triggering(eventBus, readModel, "projects")
+Rel_Assignment(managedRuntime, booking, "hosts")
+Rel_Assignment(managedRuntime, allocationWorker, "hosts")
+Rel_Assignment(managedDatabase, bookingStore, "stores")
+Rel_Association(req, bookingStore, "drives")
+Rel_Association(candidateRisk, eventBus, "tradeoff")
+
+' Layering hint: motivation above application above technology.
+req -[hidden]down- app
+candidateRisk -[hidden]down- eventBus
+app -[hidden]down- managedRuntime
+bookingStore -[hidden]down- managedDatabase
+@enduml
+```
