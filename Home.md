@@ -1,6 +1,9 @@
-# FairSpot Architecture
+<div class="fairspot-hero">
+  <img src="images/brand/fairspot-logo.svg" alt="FairSpot" class="fairspot-hero-logo">
+  <p>Standalone architecture repository for the FairSpot product: target architecture, requirements, decisions, risks, standards, governance, and migration planning.</p>
+</div>
 
-This site is the standalone architecture repository for FairSpot.
+# FairSpot Architecture
 
 It is intended for enterprise architecture, solution architecture, security review, and implementation governance. Product, business-reader, evaluation, and operational runbook pages remain in the main FairSpot documentation site.
 
@@ -23,4 +26,3 @@ The current content is intentionally lightweight. It favours clear traceability 
 
 - Main FairSpot docs: [https://robertvejvoda.github.io/fairspot/](https://robertvejvoda.github.io/fairspot/)
 - FairSpot source repository: [https://github.com/RobertVejvoda/fairspot](https://github.com/RobertVejvoda/fairspot)
-
