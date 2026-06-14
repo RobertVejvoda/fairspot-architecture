@@ -3,7 +3,7 @@
 |  |  |
 | --- | --- |
 | **Status** | Draft |
-| **Version** | 0.5 |
+| **Version** | 0.6 |
 | **Architecture State** | Target |
 | **ADM Phase** | Requirements Management |
 | **Responsible** | Codex/Product Owner |
@@ -109,6 +109,7 @@ Recommended requirement statuses:
 | AR-022 | Production-facing Dapr components must have profile-specific evidence for component scopes, secret references, mTLS/service identity where used, resiliency policies, state encryption where supported, and sidecar/API hardening. | Dapr-first production direction | Technology, security | Placeholder |
 | AR-023 | Backup, restore, export, and break-glass operations must preserve tenant boundaries, avoid recording secrets, audit privileged access, and document restore-time re-erasure where personal data is restored. | Security model and backup/restore direction | Security, technology, privacy | Placeholder |
 | AR-024 | Sponsor, facilities, HR support, and DataHub projection views must have approved role-safe output shapes before external customer use. | Privacy architecture and DataHub direction | Security, business, data | Placeholder |
+| AR-025 | Legacy source evidence must be clearly classified as adopted target content, active contract evidence, runbook evidence, deferred scope, obsolete direction, or retirement candidate before old FairSpot documentation is removed or reused for customer review. | Architecture repository migration | Governance, architecture states, views, information systems, technology, security | Draft |
 
 ## ADM Phase Impact
 

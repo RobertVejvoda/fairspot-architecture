@@ -1,6 +1,6 @@
 # Diagrams
 
-This index keeps current diagrams discoverable and makes missing architecture views explicit.
+This index keeps current diagrams discoverable, displays important source evidence, and makes missing architecture views explicit.
 
 The repository has two diagram classes:
 
@@ -24,6 +24,91 @@ Until a target view is explicitly marked authoritative, the text architecture pa
 | Software architecture and packages | Shows software packages and service boundaries. | [Software Architecture](https://robertvejvoda.github.io/fairspot/#/technology-layer/software-architecture), package and service images under `images/` | Source evidence; service catalog and target diagrams are authoritative after refresh. |
 | BPMN process evidence | Shows older process flows. | [Draw BPMN](/process/draw.bpmn), [Subscribe Tenant BPMN](/process/subscribe-tenant.bpmn), [Generate Invoice BPMN](/process/generate-invoice.bpmn) | Draw can inform target process/workflow views; Billing invoice process is deferred. |
 | Model files | Contain editable model sources. | `archi/fps.archimate`, `fps.drawio`, `fps-composition.drawio`, `wireframes.drawio` | Source model files; update only when Robert refreshes or approves the target model. |
+
+## Diagram Evidence Gallery
+
+The diagrams below are displayed as source evidence so readers can inspect the earlier model quickly. They are useful for migration and review, but they are not automatically authoritative. If a diagram conflicts with current target text, the target architecture pages and gap register win.
+
+### Exchange Map
+
+![FairSpot exchange map](/images/fps-exchange-map.png)
+
+| Field | Value |
+| --- | --- |
+| Current use | High-level explanation of FairSpot business/application exchanges and adjacent capabilities. |
+| Adoption status | Source evidence. Useful for business architecture and capability discussions. |
+| Known gap | Needs annotation for the customer-first parking scope, deferred Billing, DataHub target, and which exchanges are current versus future. |
+
+### Function Map
+
+![FairSpot function map](/images/fps-function-map.png)
+
+| Field | Value |
+| --- | --- |
+| Current use | Explains target functions/services and how product capabilities map to implementation areas. |
+| Adoption status | Partial. The capability/application split has been restated in Business Architecture and Application Architecture. |
+| Known gap | Needs refresh so Reporting/PostgreSQL does not look like the target read-model store, and so DataHub, Customer persistence, resource maps, and role-specific workspaces are visible. |
+
+### Application Architecture 1
+
+![FairSpot application architecture 1](/images/fps-application-arch-1.png)
+
+| Field | Value |
+| --- | --- |
+| Current use | Strong source evidence for browser/mobile clients, API boundary, identity, services, Dapr, state stores, observability, and staged target components. |
+| Adoption status | Partial. The text target now clarifies Booking ownership, Configuration policy/resource maps, Customer durable state, DataHub read models, Audit, Notification, and deferred Reporting/Billing. |
+| Known gap | Needs an authoritative application cooperation view that separates command owners, DataHub projections, Reporting catalog/presentation, and hosted-profile infrastructure. |
+
+### Application Architecture 2
+
+![FairSpot application architecture 2](/images/fps-application-arch-2.png)
+
+| Field | Value |
+| --- | --- |
+| Current use | Additional application-level evidence for earlier target thinking. |
+| Adoption status | Source evidence only. |
+| Known gap | Must be reconciled with the current DataHub, Dapr workflow, hosted deployment, and Reporting cleanup decisions before it can be used as target architecture. |
+
+### Data Architecture
+
+![FairSpot data architecture](/images/fps-data-architecture.png)
+
+| Field | Value |
+| --- | --- |
+| Current use | Explains earlier data ownership/read model direction. |
+| Adoption status | Partial. The current target is service-owned writes plus DataHub as the event-fed replicated read store. |
+| Known gap | Needs a target DataHub/read-model view showing event inbox, projection checkpoints, approved read APIs, projection health, privacy shape, and rebuild path. |
+
+### Logical Architecture
+
+![FairSpot logical architecture](/images/fps-logical-architecture.png)
+
+| Field | Value |
+| --- | --- |
+| Current use | Source evidence for runtime/deployment boundaries. |
+| Adoption status | Partial. Runtime Platform and Deployment Profiles now describe the Dapr-first hosted profile in text. |
+| Known gap | Needs authoritative deployment and trust-boundary views for NAS, Cloudflare/WAF, Dapr sidecars/components, state stores, backups, observability, and public/private surfaces. |
+
+### Software Architecture And Package Evidence
+
+| Evidence | Link | Use | Status |
+| --- | --- | --- | --- |
+| Software architecture | [Image](/images/fps-software-architecture.png) | Explains earlier software package and service structure. | Source evidence until service catalog and target application cooperation view are authoritative. |
+| Detailed software architecture | [Image](/images/fps-software-architecture-detailed.png) | Lower-level package detail. | Source evidence; useful for implementation orientation, not customer-facing target validation. |
+| Booking service package | [Image](/images/fps-software-arch-booking.png) | Booking internal component evidence. | Source evidence. |
+| Configuration service package | [Image](/images/fps-software-arch-configuration.png) | Configuration internal component evidence. | Source evidence. |
+| Customer service package | [Image](/images/fps-software-arch-customer.png) | Customer internal component evidence. | Source evidence; must reflect durable persistence progress and remaining gaps. |
+| Audit service package | [Image](/images/fps-software-arch-audit.png) | Audit internal component evidence. | Source evidence. |
+| Profile service package | [Image](/images/fps-software-arch-profile.png) | Profile internal component evidence. | Source evidence. |
+| Reporting service package | [Image](/images/fps-software-arch-reporting.png) | Earlier Reporting component evidence. | Obsolete unless reduced to report catalog/configuration/presentation over DataHub-approved views. |
+
+### Process Model Evidence
+
+| Process Evidence | Link | Use | Status |
+| --- | --- | --- | --- |
+| Draw BPMN | [BPMN file](/process/draw.bpmn) | Source for Draw process, allocation, and operational workflow refresh. | Partial; target Draw workflow view still needed. |
+| Subscribe Tenant BPMN | [BPMN file](/process/subscribe-tenant.bpmn) | Source for tenant onboarding/readiness process. | Source evidence; useful for Customer and tenant readiness. |
+| Generate Invoice BPMN | [BPMN file](/process/generate-invoice.bpmn) | Source for future Billing process. | Deferred with Billing scope. |
 
 ## Target View Catalog
 
